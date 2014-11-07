@@ -97,20 +97,21 @@ window.view = {
 				sourceLastChild = source[i]
 			}
 		}
-		alert(sourceLastChild.className)
-		alert(sourceDiskClass)
+		console.log("source class = " + sourceLastChild.className)
+		console.log("source disk class = " + sourceDiskClass)
 		for ( var j = 0 ; j < destination.length ; j ++ ) {
 			destinationClass = destination[j].className.split(' ')
 			if ( destinationClass.length > 1 ) {
-				destinationLastChild = destination[ i + 1 ]
-				alert(destinationLastChild.className)
+				destinationLastChild = destination[j+1]
+				break
 			}
 			else
 				destinationLastChild = destination[0]
 		}
-		alert(destinationLastChild.className)
+		console.log("destination last child = " + destinationLastChild.className)
 		sourceLastChild.className -= ' ' + sourceDiskClass
 		destinationLastChild.className += ' ' + sourceDiskClass 
+		console.log('new class =' + destinationLastChild.className)
 	},
 	executeCode: function() {
 		this.lastRedDiv = this.getLastHighlightedDiv()
