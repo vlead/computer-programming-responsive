@@ -85,7 +85,32 @@ window.view = {
 		this.n --
 	},
 	moveDisksAround: function() {
-		
+		var source, destination, sourceClass, destinationClass, sourceLastChild, destinationLastChild 
+		var sourceDiskClass = ''
+		var destinationPositionClass = ''
+		source = document.getElementById(String(this.S)).childNodes
+		destination = document.getElementById(String(this.D)).childNodes
+		for ( var i = 0 ; i < source.length ; i ++ ) {
+			sourceClass = source[i].className.split(' ')
+			if ( sourceClass.length > 1 ) {
+				sourceDiskClass = sourceClass[1]
+				sourceLastChild = source[i]
+			}
+		}
+		alert(sourceLastChild.className)
+		alert(sourceDiskClass)
+		for ( var j = 0 ; j < destination.length ; j ++ ) {
+			destinationClass = destination[j].className.split(' ')
+			if ( destinationClass.length > 1 ) {
+				destinationLastChild = destination[ i + 1 ]
+				alert(destinationLastChild.className)
+			}
+			else
+				destinationLastChild = destination[0]
+		}
+		alert(destinationLastChild.className)
+		sourceLastChild.className -= ' ' + sourceDiskClass
+		destinationLastChild.className += ' ' + sourceDiskClass 
 	},
 	executeCode: function() {
 		this.lastRedDiv = this.getLastHighlightedDiv()
@@ -144,4 +169,4 @@ window.view = {
 		this.activateEvents()
 	}
 }
-window.onload = function() { view.init() }
+window.onload = function() { view.init() }																										
