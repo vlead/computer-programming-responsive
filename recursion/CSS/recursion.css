@@ -274,44 +274,44 @@ body {
 .pillarLog {
     position: absolute;
     width: 8%;
-    height: 60%;
-    top:20%;
+    height: 50%;
+    top:30%;
     left: 46%;
     background-color: #3072b3;
 }
 
 .disk1, .disk2, .disk3, .disk4, .disk5 {
     position: absolute;
-    height: 4%;
+    height: 5%;
     border-radius: 7px;
     left: 10%;
     width: 80%;
 }
 
 .position1{
-    top: 76%;
+    top: 75%;
 }
 
 .position2{
-    top: 72%;
+    top: 70%;
 }
 
 .position3{
-    top: 68%;
+    top: 65%;
 }
 
 .position4{
-    top: 64%;
+    top: 60%;
 }
 
 .position5{
-    top: 60%;
+    top: 55%;
 }
 
 .disk1 {
     left: 10%;
     width: 80%;
-    background-color: #475F77;
+    background-color: #315331;
 }
 
 .disk2 {
@@ -373,6 +373,8 @@ body {
 	position: absolute;
 	top: 80%;
 	left: 10%;
+	font-size: 120%;
+	font-weight: bold;
 }
 
 .a {
