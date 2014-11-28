@@ -13,7 +13,7 @@ body {
 	position: absolute;
 	top: 0;bottom: 0;left: 0;right: 0;
 	width: 100%;
-	height: 6%;
+	height: 10%;
 	font-size: 4vh;
 	padding-top: 1.3vmin;
 }
@@ -80,12 +80,33 @@ body {
 }
 
 .inputDivision, .outputDivision, .executionDivision {
-    top: 11%;
-    height: 87%; 
+    top: 15%;
+    height: 83%; 
     position: absolute;
     border: 1px solid #CCC;
     border-radius: 5px;
     color: #464646;
+}
+
+.operatorSelection, .dataTypeSelection {
+    position: absolute;
+    font-size: 80%;
+    padding-top: 1vh;
+}
+
+.dataTypeSelection {
+    right: 25%;
+}
+
+.operatorSelection {
+    left: 25%;
+}
+
+.operatorList {
+    border-radius: 0.2em;
+    border: 1px solid #d4d4d4;
+    padding: 0.2vmin;
+    margin-left: 2vh;
 }
 
 .inputDivision {
@@ -139,13 +160,13 @@ body {
 
 .executionPic {
 	margin-top: 1vh;
-	width: 25%;
+	width: 20%;
 	background-image: url('pageIcon.png');
 }
 
 .executionText {
-	text-align: left;
-	width: 50%;
+	text-align: center;
+	width: 70%;
 	float: left;
 	height: 100%;
 	padding-top: 1.8vmin; 
@@ -239,7 +260,8 @@ body {
     margin-top: 15px;
 }
 
-.startButton, .stopButton{
+.startButton, .stopButton {
+    top: 2%;
     height: 30px;
     width: 36%;
     float: center;
@@ -251,6 +273,7 @@ body {
 }
 
 .nextButton {
+    top: 2%;
     margin-left: 14px; 
     height: 30px;
     width: 36%;
@@ -281,6 +304,7 @@ body {
     border-top: 1px solid #CCC;
     line-height: 160%;
     font-size: 1.1em;
+    text-align: left;
 }
 
 .hide {
@@ -340,8 +364,13 @@ body {
      color: #719C57;
 }
 
-.blueFont {
+.blue {
     color: #2a65a0;
+    font-weight: bold;
+}
+
+.peach {
+    color: #CC3300;
 }
 
 @media only screen and (min-width: 1000px) {

@@ -10,15 +10,13 @@ window.view = {
 	currentOperation: null,
 	removeChild: function(id) {
 		var element = document.getElementById(id);
-		while( element.hasChildNodes() ){
+		while( element.hasChildNodes() ) {
     	element.removeChild(element.lastChild);
 		}
 	},
 	checkValidation: function(input) {
 		if(isNaN(input)===true) 
-		{
 			this.validationKey = this.validationKey + 1;
-		}
 	},
 	inputValidation: function() {
 		var valueOfA = document.getElementById("inputValueOfA").value
@@ -83,15 +81,12 @@ window.view = {
 	getExpressionForBrackets: function(expression) {
 		var newExpression = "";
 		for (var i = 0; i < expression.length ; i++) {
-			if(expression[i]=='(')
-			{
+			if(expression[i]=='(') {
 				newExpression = '';
 				newExpression = newExpression + expression[i];
 			}
 			else
-			{
-				newExpression = newExpression + expression[i];	
-			}
+				newExpression = newExpression + expression[i];
 			if(expression[i]==')')
 				break;	
 		};
@@ -105,8 +100,7 @@ window.view = {
 		var expressionWithAllValues = this.setValuesInExpression(expressionwithoutAnyGap)
 		return expressionWithAllValues;
 	},
-	changeToProperExpression: function(originalExpression)
-	{
+	changeToProperExpression: function(originalExpression) {
 		var expression = "";
 		for (var i = 0; i < originalExpression.length ; i++) {
 			expression = expression + originalExpression[i]+" ";
@@ -156,8 +150,7 @@ window.view = {
 		if(this.childDivNo<1) {
 			childDiv.textContent = "[ "+displayValue+" ]";
 		}
-		else
-		{
+		else {
 			childDiv.textContent = displayValue;
 		}	
 		childDiv.id = 'childOfExpressionDivision'+this.childDivNo;
@@ -166,8 +159,7 @@ window.view = {
 	},
 	addChildReasoning: function() {
 		var childDiv = document.createElement('div');
-		switch(this.functionPrecedence)
-		{
+		switch(this.functionPrecedence) {
 		case 0:
 			childDiv.textContent = '() is preferred over other operators. Hence the operators inside the brackets is evaluated first and then following left to right rule'
 		  break;
@@ -184,12 +176,11 @@ window.view = {
 	expressionEvaluationOfBrackets: function() {	
 		var expression = document.getElementById("childOfExpressionDivision"+this.childDivNo).textContent;	
 		var matches = expression.match(/\(/);
-		if(matches!=null) 
-		{	var newExpression = this.getExpressionForBrackets(expression)
+		if(matches!=null) {
+			var newExpression = this.getExpressionForBrackets(expression)
 			expression = this.getNextEvaluationStep(newExpression,expression)
 		}
-		else
-		{
+		else {
 			this.functionPrecedence = this.functionPrecedence + 1;
 			expression =  this.expressionEvaluationOfANDOperator()
 		}
@@ -199,11 +190,8 @@ window.view = {
 		var expression = document.getElementById("childOfExpressionDivision"+this.childDivNo).textContent;	
 		var matches = expression.match(/(\-\d+\.\d+|\+\d+\.\d+|\d+\.\d+|\.\d+|\-\d+|\+\d+|\d+)\s\&\&\s(\-\d+\.\d+|\+\d+\.\d+|\d+\.\d+|\.\d+|\-\d+|\+\d+|\d+)/);
 		if(matches!=null)
-		{
 			expression = this.getNextEvaluationStep(matches[0],expression)
-		}
-		else
-		{
+		else {
 			this.functionPrecedence = this.functionPrecedence + 1;
 			expression =  this.expressionEvaluationOfOROperator()
 		}
@@ -216,15 +204,12 @@ window.view = {
 			expression = this.getNextEvaluationStep(matches[0],expression)
 		}
 		else
-		{
 			expression = 'null'
-		}
 		return expression;
 	},
 	expressionEvaluation: function() {	
 		var expressionResult ;
-		switch(this.functionPrecedence)
-		{
+		switch(this.functionPrecedence) {
 		case 0:
 		  expressionResult =  this.expressionEvaluationOfBrackets();
 		  break;
@@ -270,13 +255,11 @@ window.controller = {
 	},
 	saveInputValues: function() {
 		view.inputValidation();
-		if(view.validationKey>0)
-		 {
+		if(view.validationKey>0) {
 			alert('Invalid input ! The values must be integer or float !');
 			view.resetValidationKey();
 		}
-		else
-		{
+		else {
 			view.disableElement('inputValueOfA');
 			view.disableElement('inputValueOfB');
 			view.disableElement('inputValueOfC');
@@ -317,9 +300,7 @@ window.controller = {
 			view.addChildExpression(expressionToPrint) 
 		}
 		else
-		{
 			alert('invalid expression!')
-		}
 	},
 	clickNextButton: function() {
 		var expressionOutputToDisplay = view.expressionEvaluation()	
@@ -328,8 +309,7 @@ window.controller = {
 			view.addChildReasoning()
 			view.printCurrentOperation(view.currentOperation)
 		}
-		else
-		{
+		else {
 			view.messageDialogBox();
 			view.resetButtons();
 		}
