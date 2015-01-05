@@ -253,7 +253,6 @@
 </div>
 
 <div class="row">
-<a href="exp9/index.html">
 <div class="col-lg-6">
       <div class="experiment-card">
         <p class="experiment-title">9. Recursion </p>
@@ -270,7 +269,6 @@
         <p class="experiment-prereq">Prerequisite : </p>   
       </div>
     </div>
-</a>
    <div class="col-lg-6" style = "opacity: 0.3;">
     <div class="experiment-card">
       <p class="experiment-title">10. Expression Evaluation</p>

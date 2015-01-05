@@ -117,7 +117,7 @@ For writing a recursive code for a problem, we simply call a function inside the
       <p class="manual-section-title">Manual</p><hr />
       <div class="manual-section-description">
         <p>
-         Experiments will show you how to solve the classical puzzle of Towers of Hanoi. 
+         Experiments will show you how to calculate factorial using recursion and how to solve the classical puzzle of Towers of Hanoi. 
         </p>
       </div>
     </div>
