@@ -4,7 +4,8 @@
 //---------------------------------+
 
 window.model = {
-	inputValueA: '', // user input a.
+	inputValueA
+: '', // user input a.
 	inputValueB: '', // usre input b.
 	sum: 0, //total sum that compute by computeSum method. 
 	width: 1, //width of executing one step.
