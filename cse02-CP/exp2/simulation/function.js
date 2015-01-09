@@ -17,6 +17,7 @@ window.view = {
     },
 	activateClicks: function() {
 		this.addClickEvent('imageSquare', function() { view.showSquareInputs() })
+		this.addTouchEvent('imageSquare', function() { view.showSquareInputs() })
 		this.addClickEvent('okSquare', function() { view.validateSquareInputs() })
 		this.addClickEvent('imageRectangle', function() { view.showRectangleInputs() })
 		this.addClickEvent('okRectangle', function() { view.validateRectangleInputs() })
@@ -286,6 +287,10 @@ window.view = {
 	addMouseOutEvent: function(id, method) {
 		var element = document.getElementById(id)
 		element.addEventListener('mouseout', method, false)
+	},
+	addTouchEvent: function(id, method) {
+		var element = document.getElementById(id)
+		element.addEventListener('touchend', method, false)
 	},
 	replaceDivs: function() {
 		if ( this.i === 4 ) {
